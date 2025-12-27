@@ -46,6 +46,7 @@ GP47: LED6
 
 VGA 出力のためには以下のように配線します。
 
+```
 - GPIO30 VGA:H-SYNC
 - GPIO31 VGA:V-SYNC
 - GPIO32 VGA:Blue0 (330 Ohm)
@@ -56,6 +57,7 @@ VGA 出力のためには以下のように配線します。
 - GPIO37 VGA:Green0 (330 Ohm)
 - GPIO38 VGA:Green1 (680 Ohm)
 - GPIO39 VGA:Green2 (1.2K Ohm)
+```
 
 VGA の色信号は以下のように接続します
 
@@ -85,10 +87,10 @@ Green2--- 1.2k Ohm resister --+---> VGA Green
 ## ROM データ
 
 ROM データは 1 ページ最大 20KiB で、32KiB 境界ごとに置きます。
-最初の ROM の場所は `0x10008000` になりますので、`0x10008000 + (0x8000 * ROM 番号)` に置いたデータが読み込まれます。
+最初の ROM の場所は `0x10080000` になりますので、`0x10080000 + (0x8000 * ROM 番号)` に置いたデータが読み込まれます。
 最大 64 個の ROM に対応しています。
 
-ROM データの書き込みには picotool などをご使用ください。
+ROM データの書き込みには [picotool](https://github.com/raspberrypi/picotool) などをご使用ください。
 
 ---
 ## RAM
